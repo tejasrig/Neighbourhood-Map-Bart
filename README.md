@@ -5,7 +5,7 @@ This app highlights the BART locations on a map in Bay Area, giving some informa
 This Project consists of three files that you will see in the repository. 
 ### css: 
 _This folder holds the style sheets and other images needed for the application. Currently this holds the `styles.css` file responsible for all the styles of the App._
-### images:
+### img:
 _This folder holds images embedded within the app._
 ### js:
 _This folder has all the necessary Javascript files used in the app._
