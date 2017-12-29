@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BART - Bay Area Rapid Transit</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="header">
+        <h2>BART - Bay Area</h2>
+    </div>
+    <div class="main">
+    <div class="navbar">
+        <input type="text" class="search" data-bind="textInput: query" placeholder="Search with the Station name">
+        <ul data-bind="foreach: queryResults">
+            <li class="location_name"><a href="#" class="location_name" data-bind="text: name, click: viewStation"></a></li>
+        </ul>               
+    </div>   
+    <div id="map" data-bind="click: closeDesc"></div>
+    <!-- ko if: des_name -->
+    <div class="description" >
+        <img class="bart-logo" src="img/logo.png" alt="Bart logo">
+        <h3 data-bind="text: des_name"></h3>
+        <hr>
+        <p>Address: <span data-bind="text: address"></span></p>
+        <p>City: <span data-bind="text: city"></span></p>
+        <p>Zip: <span data-bind="text: zipcode"></span></p>
+        <p>Platform: <span data-bind="text: platform"></span></p>
+        <button class="close-btn" data-bind="click: closeDesc">X</button>
+    </div> 
+    <!-- /ko -->
+    <!-- ko if: apiError -->  
+        <div class="api-error">
+            <h2 class="error_message" data-bind="text:error_message"></h2>
+        </div>
+    <!-- /ko -->  
+    </div>
+    <script src="js/knockout-3.4.2.js"></script>   
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $('.option-icon').click(function(){
+            $('.navbar').toggleClass('open');
+        });
+    </script>
+    <script src="js/model.js"></script>
+    <script src="js/bartapp.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyASZZI4YVjhE6WVO0g-3hLpTlOmaJhWc2I&v=3&callback=initMap" onerror="googleError()" async defer></script>
+    <script>
+        $('.location_name').click(function(){
+            $('.navbar').removeClass('open');
+        });
+                  
+         $('a').click(function(){
+            $('a').removeClass('li-active');
+            $(this).addClass('li-active');
+        });
+        
+    </script>
+    
+  </body>
+</html>
+
