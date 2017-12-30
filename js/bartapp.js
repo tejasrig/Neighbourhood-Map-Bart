@@ -89,13 +89,13 @@ var BartData = function(place){
         url:bartapiURL,
         dataType:"json",
         async:true        
-    }).success(function(data){
+    }).done(function(data){
             self.des_name(data.root.stations.station.name);
             self.address(data.root.stations.station.address);
             self.city(data.root.stations.station.city);
             self.zipcode(data.root.stations.station.zipcode);
             self.platform(data.root.stations.station.platform_info);   
-    }).error(function(data){
+    }).fail(function(data){
         BartApiError();
     })
     

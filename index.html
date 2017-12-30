@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>BART - Bay Area Rapid Transit</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
@@ -10,7 +11,8 @@
 </head>
 <body>
     <div class="header">
-        <h2>BART - Bay Area</h2>
+        <a href="#" class="option-icon header_item"><img src="img/expand-icon.svg"></a>
+        <h2 class="header_title header_item"> BART - Bay Area</h2>
     </div>
     <div class="main">
     <div class="navbar">
@@ -39,7 +41,7 @@
     <!-- /ko -->  
     </div>
     <script src="js/knockout-3.4.2.js"></script>   
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script>
         $('.option-icon').click(function(){
             $('.navbar').toggleClass('open');
@@ -47,8 +49,7 @@
     </script>
     <script src="js/model.js"></script>
     <script src="js/bartapp.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyASZZI4YVjhE6WVO0g-3hLpTlOmaJhWc2I&v=3&callback=initMap" onerror="googleError()" async defer></script>
-    <script>
+        <script>
         $('.location_name').click(function(){
             $('.navbar').removeClass('open');
         });
@@ -59,7 +60,7 @@
         });
         
     </script>
-    
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyASZZI4YVjhE6WVO0g-3hLpTlOmaJhWc2I&v=3&callback=initMap" onerror="googleError()" async defer></script>
   </body>
 </html>
 

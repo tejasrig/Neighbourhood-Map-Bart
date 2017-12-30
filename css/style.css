@@ -13,8 +13,6 @@ html, body {
   height: 10%; 
   color: #1c262f;
   vertical-align: middle;
-  display: inline-block;
-  margin-left: 10px;
 }
 .option-icon{
   display: none;
@@ -25,6 +23,13 @@ html, body {
   width: 35px;
   height: 18px;
 }
+.header_title{
+  vertical-align: left;
+}
+.header .header_item{
+  display: inline-block;
+  margin-left: 10px;
+} 
 .main{
   width: 100%;
   height: 90%;
@@ -139,6 +144,7 @@ input{
     z-index: 10;
     width: 300px;
     height: 100%;
+    position: absolute;
     background: #1c262f;
     /* This trasform moves the drawer off canvas. */
     -webkit-transform: translate(-300px, 0);
@@ -146,7 +152,10 @@ input{
     /* Optionally, we animate the drawer. */
     
   }
-
+  .navbar.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
   .option-icon {
     vertical-align: middle;
     display: inline-block;
